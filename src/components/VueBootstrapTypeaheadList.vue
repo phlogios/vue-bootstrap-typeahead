@@ -59,7 +59,7 @@ export default {
     },
     matcher: {
       type: Function,
-      default: (d) => d,
+      default: null,
       validator: d => d instanceof Function
     }
   },
@@ -86,7 +86,7 @@ export default {
         return []
       }
 
-      if (this.matcher instanceof Function) {
+      if (this.matcher) {
         return this.matcher(this.data)
       } else {
         const re = new RegExp(this.escapedQuery, 'gi')

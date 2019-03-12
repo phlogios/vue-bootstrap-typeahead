@@ -97,7 +97,7 @@ export default {
     append: String,
     matcher: {
       type: Function,
-      default: (d) => d,
+      default: null,
       validator: d => d instanceof Function
     }
   },
