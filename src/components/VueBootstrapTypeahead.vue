@@ -33,6 +33,7 @@
       :background-variant="backgroundVariant"
       :text-variant="textVariant"
       :minMatchingChars="minMatchingChars"
+      :matcher="matcher"
       @hit="handleHit"
     >
       <!-- pass down all scoped slots -->
@@ -93,7 +94,12 @@ export default {
     },
     placeholder: String,
     prepend: String,
-    append: String
+    append: String,
+    matcher: {
+      type: Function,
+      default: (d) => d,
+      validator: d => d instanceof Function
+    }
   },
 
   computed: {
