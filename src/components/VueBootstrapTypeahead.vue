@@ -138,7 +138,7 @@ export default {
     },
 
     handleHit(evt) {
-      this.$emit('input', evt.text)
+      this.handleInput(evt.text)
       this.$emit('hit', evt.data)
       this.$refs.input.blur()
       this.isFocused = false
